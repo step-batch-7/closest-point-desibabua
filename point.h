@@ -16,7 +16,7 @@ Location of organism: [36 27],  Closest food target : [55 38]
 #define food_points FPs
 #define points_length P_length
 #define current_location Curr_Loc
-#define closest_food_location Closest_Fl
+#define closest_food_location Closest_Fls
 
 #define REPEAT(start,end) for(int i = start; i < end;i++)
 #define FOOD_LOCATIONS {{18, 76}, {19, 66}, {89, 57}, {9, 71}, {55, 38}}
