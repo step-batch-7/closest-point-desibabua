@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <math.h>
 #include "point.h"
 
@@ -21,9 +20,9 @@ void get_closest_food(POINT FPs[], int P_length, POINT Curr_Loc, POINT *Closest_
 		curr_food_distance = get_distance(&FPs[i], &Curr_Loc);
 		if (curr_food_distance < distance)
 		{
-			distance = curr_food_distance;
-			Closest_Fl->x = FPs[i].x;
-      Closest_Fl->y = FPs[i].y;
-    }
-  }
+		distance = curr_food_distance;
+		Closest_Fl->x = FPs[i].x;
+		Closest_Fl->y = FPs[i].y;
+		}
+	}
 }
