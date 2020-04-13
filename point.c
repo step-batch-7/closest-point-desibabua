@@ -1,28 +1,27 @@
 #include <math.h>
 #include "point.h"
 
-//food_points = FPs
+//food_points = food_points
 //points_length = P_length
 //current_location = Curr_Loc
 //closest_food_location = Closest_Fl
 
-double get_distance(POINT *ptr_1,POINT *ptr_2)
+double get_distance(POINT point_1,POINT point_2)
 {
-  return hypot(ptr_1->x - ptr_2->x, ptr_1->y - ptr_2->y);
+  return hypot(point_1.x - point_2.x, point_1.y - point_2.y);
 }
 
-void get_closest_food(POINT FPs[], int P_length, POINT Curr_Loc, POINT *Closest_Fl)
+void get_closest_food(POINT food_points[], int points_length, POINT current_location, POINT *closest_food_location)
 {
-  double distance = get_distance(&FPs[0], &Curr_Loc);
+  double distance = INFINITY;
   double curr_food_distance;
-  REPEAT(0, P_length)
+  REPEAT(0, points_length)
   {
-    curr_food_distance = get_distance(&FPs[i], &Curr_Loc);
+    curr_food_distance = get_distance(food_points[i], current_location);
     if (curr_food_distance < distance)
     {
     distance = curr_food_distance;
-    Closest_Fl->x = FPs[i].x;
-    Closest_Fl->y = FPs[i].y;
+    *closest_food_location = food_points[i];
     }
   }
 }
