@@ -1,11 +1,6 @@
 #include <math.h>
 #include "point.h"
 
-//food_points = food_points
-//points_length = P_length
-//current_location = Curr_Loc
-//closest_food_location = Closest_Fl
-
 double get_distance(POINT point_1,POINT point_2)
 {
   return hypot(point_1.x - point_2.x, point_1.y - point_2.y);
